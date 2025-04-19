@@ -12,12 +12,12 @@ with sync_playwright() as p:
     page.goto("https://tabletopia.com/players/id3674590/zdytgc")
 
     print("Waiting for 'Join' button...")
-    page.wait_for_selector("#player-join-seat-btn", timeout=10000)
+    page.wait_for_selector("#player-join-seat-btn", timeout=60000)
     print("Clicking 'Join' button...")
     page.click("#player-join-seat-btn")
 
     print("Waiting for username input field...")
-    page.wait_for_selector("input.js-username", timeout=10000)
+    page.wait_for_selector("input.js-username", timeout=60000)
     print(f"Filling username: {USERNAME}")
     page.fill("input.js-username", USERNAME)
 
@@ -27,13 +27,13 @@ with sync_playwright() as p:
             const btn = document.querySelector('button.button');
             return btn && !btn.classList.contains('disabled');
         }""",
-        timeout=10000
+        timeout=60000
     )
     print("Clicking 'Play as Guest' button...")
     page.click("button.button:has-text('Play as Guest')")
 
     print("Waiting for 'Continue' button...")
-    page.wait_for_selector("#player-continue-btn", timeout=10000)
+    page.wait_for_selector("#player-continue-btn", timeout=60000)
     print("Clicking 'Continue' button...")
     page.click("#player-continue-btn")
 
