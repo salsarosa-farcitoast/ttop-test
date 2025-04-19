@@ -9,7 +9,7 @@ with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
     page = browser.new_page()
     print("Navigating to the URL...")
-    page.goto("https://tabletopia.com/players/id3674590/2vigat")
+    page.goto("https://tabletopia.com/players/id3674590/zdytgc")
 
     print("Waiting for 'Join' button...")
     page.wait_for_selector("#player-join-seat-btn", timeout=10000)
